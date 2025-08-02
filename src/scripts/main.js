@@ -31,7 +31,7 @@ function keyboardHandler(e) {
   }
   if (playerPressed === shownAlpha) {
     // make the success sound
-    // audio.src = "../audio/success.mp3";  having problem here
+    audio.src = "/audio/success.mp3";
     audio.play();
     //
     let currentScore = getInnerTextById("current-score");

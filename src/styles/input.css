@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.kbd {
+  @apply bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300;
+}

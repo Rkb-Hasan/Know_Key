@@ -22,5 +22,8 @@ function generateRandomKey() {
   return randomAlphabet;
 }
 function setBackgroundColorById(id) {
-  getElementById(id).style.backgroundColor = "orange";
+  getElementById(id).classList.add("bg-orange-500", "animate-pulse");
+}
+function removeBackgroundColorById(id) {
+  getElementById(id).classList.remove("bg-orange-500", "animate-pulse");
 }

@@ -28,7 +28,7 @@
           </div>
           <button
             type="button"
-            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-[10px] md:text-sm px-2 py-1 md:px-5 md:py-2.5 text-center"
             onclick="play()"
           >
             Play
@@ -42,7 +42,7 @@
           <!-- life/score -->
           <div class="flex w-11/12 mt-6 justify-between items-center mx-auto">
             <button
-              class="text-white text-xs md:text-base rounded-2xl flex gap-1 relative place-items-center"
+              class="text-white text-xs md:text-base rounded-2xl flex place-items-center"
             >
               <svg
                 class="w-6 h-6 text-red-500"
@@ -62,7 +62,7 @@
               <span id="current-life">5</span>
             </button>
             <button
-              class="text-white rounded-2xl text-xs md:text-base flex gap-1 justify-center items-center"
+              class="text-white rounded-2xl text-xs md:text-base flex items-center"
             >
               <svg
                 class="w-6 h-5 text-[#a778f3]"
@@ -100,8 +100,10 @@
             </p>
           </div>
           <!-- keyboard -->
-          <div class="">
-            <div class="flex justify-center gap-1 my-1 w-full">
+          <div>
+            <div
+              class="flex justify-center gap-1 md:gap-2.5 my-1 md:my-3 w-full"
+            >
               <kbd
                 id="q"
                 class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
@@ -153,7 +155,9 @@
                 >p</kbd
               >
             </div>
-            <div class="flex justify-center gap-1 my-1 w-full">
+            <div
+              class="flex justify-center gap-1 md:gap-2.5 my-1 md:my-3 w-full"
+            >
               <kbd
                 id="a"
                 class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
@@ -200,7 +204,9 @@
                 >l</kbd
               >
             </div>
-            <div class="flex justify-center gap-1 my-1 w-full">
+            <div
+              class="flex justify-center gap-1 md:gap-2.5 my-1 md:my-3 w-full"
+            >
               <kbd
                 id="z"
                 class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
@@ -252,19 +258,19 @@
         id="score"
       >
         <div class="text-center space-y-6 p-4">
-          <div class="text-white">
+          <div class="text-[#a778f3]">
             <h1 class="text-lg md:text-8xl">
               <span class="font-bold">Score :</span>
               <span id="final-score">14</span>
             </h1>
           </div>
-          <p class="text-white text-[10px] md:text-2xl">
+          <p class="text-[#a778f3] text-[10px] md:text-2xl">
             Practice will make you pro
           </p>
           <button
             type="button"
             onclick="play()"
-            class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-[10px] px-3 py-1 md:px-5 md:py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-[10px] md:text-sm px-2 py-1 md:px-5 md:py-2.5 text-center"
           >
             Play Again
           </button>

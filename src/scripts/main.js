@@ -86,19 +86,17 @@ function keyboardHandler(e) {
     audio.src = "/audio/invalid.mp3";
     audio.play();
 
-    // update the life
-    if (Number(currentLife) > 0) {
-      // undate the life if greater than 0
-      updatedLife = Number(currentLife) - 1;
-      setInnerTextById("current-life", updatedLife);
+    updatedLife = Number(currentLife) - 1;
+    setInnerTextById("current-life", updatedLife);
 
-      // get the updated life as percent
-      const updatedLifePercentage = (updatedLife / 5) * 100;
+    // get the updated life as percent
+    const updatedLifePercentage = (updatedLife / 5) * 100;
 
-      // set the percent as gradient
-      artBoard.style.background = `linear-gradient(#fef6ff ${updatedLifePercentage}%,red)`;
-      getElementById("art-board").style.backgroundClip = `text`;
-    } else {
+    // set the percent as gradient
+    artBoard.style.background = `linear-gradient(#fef6ff ${updatedLifePercentage}%,red)`;
+    getElementById("art-board").style.backgroundClip = `text`;
+
+    if (Number(updatedLife) == 0) {
       // if life is 0
       gameOver();
     }

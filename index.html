@@ -3,29 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alphabet-clash</title>
-    <!-- daisy-ui -->
-
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    /> -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
-    <!-- google-font -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link -->
-    <!-- href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet" -->
-    <!-- /> -->
-    <!-- custom css -->
-    <!-- <link rel="stylesheet" href="styles/style.css" /> -->
+    <title>Know Key</title>
     <link href="./src/styles/output.css" rel="stylesheet" />
   </head>
   <body
-    class="bg-[#010313] min-h-screen bg-[url(/images/background.png)] bg-no-repeat bg-center"
+    class="bg-[#001219] text-[#b4a5c8] min-h-screen bg-no-repeat bg-center font-body"
   >
     <!-- main tag starts -->
     <main>
@@ -34,202 +16,232 @@
         id="home-screen"
         class="home text-white min-h-screen flex flex-col items-center justify-center"
       >
-        <div class="flex flex-col items-center gap-5">
-          <h1 class="text-8xl font-semibold">ALPHABET CLASH</h1>
-          <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+        <div class="flex flex-col items-center gap-5 text-purple-300">
+          <h1
+            class="text-2xl md:text-4xl lg:text-8xl font-semibold animate-bounce"
+          >
+            > Know Key >
+          </h1>
+          <div class="text-[9px] md:text-2xl text-center space-y-2">
+            <p>Unleash the Key master inside you</p>
+            <!-- <p>Press Enter to Play</p> -->
+          </div>
           <button
-            class="px-1.5 py-0.5 rounded-xl border-2 border-purple-700 bg-white text-black font-semibold hover:bg-gray-300"
+            type="button"
+            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             onclick="play()"
           >
-            Play Now
+            Play
           </button>
         </div>
       </section>
 
       <!-- playground -->
-      <section class="play-ground hidden" id="play-ground">
-        <div class="flex flex-col items-center gap-20 pt-20">
+      <section class="min-h-screen hidden" id="play-ground">
+        <div class="flex flex-col min-h-screen items-center gap-y-10">
+          <!-- life/score -->
+          <div class="flex w-11/12 mt-6 justify-between items-center mx-auto">
+            <button
+              class="text-white text-xs md:text-base rounded-2xl flex gap-1 relative place-items-center"
+            >
+              <svg
+                class="w-6 h-6 text-red-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z"
+                />
+              </svg>
+
+              <!-- life text -->
+              <span id="current-life">5</span>
+            </button>
+            <button
+              class="text-white rounded-2xl text-xs md:text-base flex gap-1 justify-center items-center"
+            >
+              <svg
+                class="w-6 h-5 text-[#a778f3]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 4h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3m0 3h6m-6 7 2 2 4-4m-5-9v4h4V3h-4Z"
+                />
+              </svg>
+
+              <span id="current-score" class="">0</span>
+            </button>
+          </div>
+
+          <!-- up text -->
+          <p class="text-[9px] md:text-sm text-purple-300">
+            Don't watch keyboard while playing
+          </p>
           <!-- screen -->
-          <div
-            id="art-board"
-            class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#1E1E1E] border-opacity-80 bg-[#B4B4BAB3]"
-          >
-            <div class="flex justify-center">
-              <p
-                class="bg-[#1E1E1E] bg-opacity-80 text-yellow-300 font-extrabold rounded-b-lg px-5 py-2"
-              >
-                Don't watch keyboard while playing...
-              </p>
-            </div>
-            <div class="flex justify-center items-center h-full">
-              <p
-                class="text-9xl font-bold text-black uppercase"
-                id="current-alphabet"
-              >
-                Y
-              </p>
-            </div>
+          <div id="art-board" class="mb-6">
+            <p
+              class="flex justify-center items-center text-9xl font-bold text-transparent uppercase font-body p-0 m-0"
+              id="current-alphabet"
+            >
+              Y
+            </p>
           </div>
           <!-- keyboard -->
-          <div>
+          <div class="">
             <div class="flex justify-center gap-1 my-1 w-full">
               <kbd
                 id="q"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >q</kbd
               >
               <kbd
                 id="w"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >w</kbd
               >
               <kbd
                 id="e"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >e</kbd
               >
               <kbd
                 id="r"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >r</kbd
               >
               <kbd
                 id="t"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >t</kbd
               >
               <kbd
                 id="y"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >y</kbd
               >
               <kbd
                 id="u"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >u</kbd
               >
               <kbd
                 id="i"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >i</kbd
               >
               <kbd
                 id="o"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >o</kbd
               >
               <kbd
                 id="p"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >p</kbd
               >
             </div>
             <div class="flex justify-center gap-1 my-1 w-full">
               <kbd
                 id="a"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >a</kbd
               >
               <kbd
                 id="s"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >s</kbd
               >
               <kbd
                 id="d"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >d</kbd
               >
               <kbd
                 id="f"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >f</kbd
               >
               <kbd
                 id="g"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >g</kbd
               >
               <kbd
                 id="h"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >h</kbd
               >
               <kbd
                 id="j"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >j</kbd
               >
               <kbd
                 id="k"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >k</kbd
               >
               <kbd
                 id="l"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >l</kbd
               >
             </div>
             <div class="flex justify-center gap-1 my-1 w-full">
               <kbd
                 id="z"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >z</kbd
               >
               <kbd
                 id="x"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >x</kbd
               >
               <kbd
                 id="c"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >c</kbd
               >
               <kbd
                 id="v"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >v</kbd
               >
               <kbd
                 id="b"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >b</kbd
               >
               <kbd
                 id="n"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >n</kbd
               >
               <kbd
                 id="m"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >m</kbd
               >
               <kbd
                 id="/"
-                class="bg-blue-200 px-2 py-0.5 rounded-lg border-2 border-amber-300"
+                class="font-body text-xs bg-[#183c35] text-purple-100 px-2 py-0.5 md:px-3.5 md:py-1.5 rounded-lg border-b-2 border-amber-300"
                 >/</kbd
               >
             </div>
-          </div>
-
-          <!-- life/score -->
-          <div class="flex justify-between items-center container mx-auto">
-            <button
-              class="bg-[#894189] text-white rounded-2xl px-8 py-2 flex gap-3"
-            >
-              Life
-
-              <span id="current-life">5</span>
-            </button>
-            <button
-              class="bg-[#360490] text-white rounded-2xl px-8 py-2 flex gap-3"
-            >
-              Score
-              <span id="current-score">0</span>
-            </button>
           </div>
         </div>
       </section>
@@ -239,20 +251,23 @@
         class="score flex flex-col gap-4 items-center min-h-screen justify-center hidden"
         id="score"
       >
-        <div class="text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
+        <div class="text-center space-y-6 p-4">
           <div class="text-white">
-            <h1 class="text-8xl">
+            <h1 class="text-lg md:text-8xl">
               <span class="font-bold">Score :</span>
               <span id="final-score">14</span>
             </h1>
           </div>
+          <p class="text-white text-[10px] md:text-2xl">
+            Practice will make you pro
+          </p>
           <button
-            class="px-1.5 py-0.5 rounded-xl border-2 border-purple-700 bg-white text-black font-semibold hover:bg-gray-300"
+            type="button"
             onclick="play()"
+            class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-[10px] px-3 py-1 md:px-5 md:py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            Play again
+            Play Again
           </button>
-          <p class="text-white">Practice will make you pro</p>
         </div>
       </section>
     </main>

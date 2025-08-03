@@ -10,6 +10,11 @@ function play() {
   setInnerTextById("current-life", 5);
   setInnerTextById("current-score", 0);
 
+  // reset the background of art-board
+  getElementById(
+    "art-board"
+  ).style.background = `linear-gradient(#fef6ff 100%,red)`;
+  getElementById("art-board").style.backgroundClip = `text`;
   //   make the gameplay true
   isGameOn = true;
 
@@ -37,11 +42,11 @@ function gameOver() {
   const finalScore = getInnerTextById("current-score");
   setInnerTextById("final-score", finalScore);
 
-  // reset the background of art-boar
+  // reset the background of art-board
   getElementById(
     "art-board"
-  ).style.background = `linear-gradient(#B4B4BAB3 100%,red)`;
-
+  ).style.background = `linear-gradient(#fef6ff 100%,red)`;
+  getElementById("art-board").style.backgroundClip = `text`;
   // remove the background of previuos alpha
   const currAlpha = getInnerTextById("current-alphabet").toLowerCase();
   removeBackgroundColorById(currAlpha);
@@ -91,7 +96,8 @@ function keyboardHandler(e) {
       const updatedLifePercentage = (updatedLife / 5) * 100;
 
       // set the percent as gradient
-      artBoard.style.background = `linear-gradient(#B4B4BAB3 ${updatedLifePercentage}%,red)`;
+      artBoard.style.background = `linear-gradient(#fef6ff ${updatedLifePercentage}%,red)`;
+      getElementById("art-board").style.backgroundClip = `text`;
     } else {
       // if life is 0
       gameOver();
